@@ -1,0 +1,9 @@
+.sviat__dont_call_container {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .sviat__dont_call_container {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,43 @@
+{
+  "Okay": "4.5.2",
+  "version": "1.0.0",
+  "moduleName": "Do not call to confirm",
+  "vendor": {
+    "email": "devsviat@proton.me",
+    "site": "https://github.com/devSviat"
+  },
+  "modifications": {
+    "backend": [
+      {
+        "file": "orders.tpl",
+        "changes": [
+          {
+            "find": "<a href=\"{url controller=OrderAdmin id=$order->id return=$smarty.server.REQUEST_URI}\" class=\"text_400 mb-q\">",
+            "prepend": "orders_list_dont_call.tpl"
+          }
+        ]
+      },
+      {
+        "file": "order.tpl",
+        "changes": [
+          {
+            "find": "<input name=\"phone",
+            "appendAfter": "order_dont_call.tpl"
+          }
+        ]
+      }
+    ],
+    "front": [
+      {
+        "file": "cart.tpl",
+        "changes": [
+          {
+            "find": "<textarea class=\"form__textarea",
+            "closestFind": "<div class=\"f_col-xl-12",
+            "appendAfter": "dont_call.tpl"
+          }
+        ]
+      }
+    ]
+  }
+}
