@@ -16,7 +16,7 @@ class Init extends AbstractInit
 
         $this->migrateEntityField(
             OrdersEntity::class,
-            (new EntityField('dont_call'))->setTypeTinyInt(1)->setDefault(0)
+            new EntityField('dont_call')->setTypeTinyInt(1)->setDefault(0)
         );
     }
 
